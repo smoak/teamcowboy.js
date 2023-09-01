@@ -1,0 +1,61 @@
+{
+  "name": "teamcowboy.js",
+  "version": "0.0.0-development",
+  "description": "A TypeScript first TeamCowboy API client",
+  "module": "dist/esm/index.js",
+  "main": "dist/cjs/index.js",
+  "types": "dist/esm/index.d.ts",
+  "scripts": {
+    "build": "run-p 'build:*'",
+    "build:cjs": "tsc -p ./tsconfig.cjs.json",
+    "build:esm": "tsc -p ./tsconfig.json",
+    "build:types": "tsc -d",
+    "clean": "rimraf dist",
+    "lint": "run-s 'lint:*'",
+    "lint:es": "eslint src --max-warnings=0",
+    "lint:style": "prettier 'src/**/*.(ts|js)' --check",
+    "test": "jest"
+  },
+  "repository": "github:smoak/teamcowboy.js",
+  "keywords": [
+    "teamcowboy",
+    "api",
+    "request"
+  ],
+  "author": "Sasha Moak (https://github.com/smoak)",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.5.0",
+    "crypto-js": "^4.1.1",
+    "qs": "^6.11.2",
+    "universal-user-agent": "^6.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.11",
+    "@babel/preset-env": "^7.22.10",
+    "@babel/preset-typescript": "^7.22.11",
+    "@types/axios-curlirize": "^1.3.2",
+    "@types/crypto-js": "^4.1.1",
+    "@types/fetch-mock": "^7.2.4",
+    "@types/jest": "^29.5.4",
+    "@types/node": "^18.17.1",
+    "@types/qs": "^6.9.8",
+    "@typescript-eslint/eslint-plugin": "^6.6.0",
+    "@typescript-eslint/parser": "^6.6.0",
+    "axios-curlirize": "^1.3.7",
+    "babel-jest": "^29.6.4",
+    "eslint": "^8.48.0",
+    "fetch-mock": "^9.3.1",
+    "jest": "^29.6.4",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.0.3",
+    "rimraf": "^5.0.1",
+    "typescript": "^5.2.2"
+  },
+  "engines": {
+    "node": ">= 18"
+  },
+  "volta": {
+    "node": "18.17.1"
+  }
+}
