@@ -1,9 +1,10 @@
 import { create } from "../request/params";
+import { TCResponse } from "../request/types";
 import type { Client } from "../types";
 
-type GetRequestResponse = {
+type GetRequestResponse = TCResponse<{
   readonly helloWorld: string;
-};
+}>;
 
 type GetRequest = (testParam?: string) => Promise<GetRequestResponse>;
 type PostRequest = GetRequest;

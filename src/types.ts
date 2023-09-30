@@ -79,6 +79,31 @@ export type DateTimeInfo = {
 export type TCLocation = {
   readonly locationId: number;
   readonly name: string;
+  readonly surface: {
+    readonly type: string;
+    readonly typeDisplay: string;
+    readonly showType: boolean;
+  };
+  readonly lights: {
+    readonly lights: string;
+    readonly lightsDisplay: string;
+    readonly hasLights: boolean;
+  };
+  readonly address: {
+    readonly addressLine1: string;
+    readonly addressLine2: string;
+    readonly city: string;
+    readonly stateProvince: string;
+    readonly postalCode: string;
+    readonly partOfTown: string;
+    readonly displayMultiline: string;
+    readonly displaySingleLine: string;
+    readonly googleMapsUrl: string;
+    readonly googleMapsDirectionsUrl: string;
+  };
+  readonly visibility: string;
+  readonly visibilityDisplay: string;
+  readonly comments: string;
 };
 
 export type RSVPInstance = {
@@ -120,7 +145,7 @@ export type EventOption = {
   };
 };
 
-export type Event = {
+export type TCEvent = {
   readonly eventId: number;
   readonly team: {
     readonly teamId: number;
@@ -139,9 +164,9 @@ export type Event = {
   readonly titleLabel: string;
   readonly homeAway: string;
   readonly result: EventResult;
-  readonly rsvpInstances: RSVPInstance[];
+  readonly rsvpInstances?: RSVPInstance[];
   readonly comments: string | null;
-  readonly options: EventOption[];
+  readonly options: EventOption;
   readonly oneLineDisplay: string;
   readonly oneLineDisplayShort: string;
   readonly maleGenderDisplay: string;
@@ -153,4 +178,63 @@ export type Event = {
   readonly userMetaInfo: UserMetaInfo;
   readonly dateCreatedUtc: Date;
   readonly dateLastUpdatedUtc: Date;
+};
+
+export type User = {
+  readonly userId: number;
+  readonly firstName: string;
+  readonly lastName: string;
+  readonly fullName: string;
+  readonly displayName: string;
+  readonly emailAddress1: string;
+  readonly emailAddress2: string | null;
+  readonly phone1: string;
+  readonly phone2: string | null;
+  readonly gender: "f" | "m" | "other";
+  readonly genderDisplay: string;
+  readonly birthDate_month: string;
+  readonly birthDate_day: string;
+  readonly birthDate_year: string;
+  readonly shirtNumber: string;
+  readonly shirtSize: string;
+  readonly pantsSize: string;
+  readonly options: object;
+  readonly profilePhoto: {
+    readonly fullUrl: string;
+    readonly smallUrl: string;
+    readonly thumbUrl: string;
+  };
+  readonly teamMeta?: object;
+  readonly linkedUsers?: object;
+  readonly dateCreatedUtc: Date;
+  readonly dateLastUpdatedUtc: Date;
+  readonly dateListSignInUtc: Date;
+};
+
+export type Team = {
+  readonly teamId: number;
+  readonly name: string;
+  readonly shortName: string;
+  readonly type: {
+    readonly name: string;
+    readonly title: string;
+  };
+  readonly activity: {
+    readonly activityId: number;
+    readonly name: string;
+  };
+  readonly timezoneId: string;
+  readonly city: string;
+  readonly stateProvince: string;
+  readonly stateProvinceAbbrev: string;
+  readonly country: string;
+};
+
+export type Message = {
+  readonly messageId: number;
+  readonly title: string;
+  readonly bodyHtml: string;
+  readonly bodyText: string;
+  readonly isPinned: boolean;
+  readonly allowComments: boolean;
 };

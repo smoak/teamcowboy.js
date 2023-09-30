@@ -5,7 +5,7 @@ import type { AxiosRequestConfig } from "axios";
 import axios from "axios";
 import { testMethods, type TestMethods } from "./methods/test";
 import { AuthMethods, authMethods } from "./methods/auth";
-import { UserMethods, userMethods } from "./methods/user";
+import { userMethods } from "./methods/user";
 import AxiosCurlirize from "axios-curlirize";
 import Qs from "qs";
 import { EventMethods, eventMethods } from "./methods/event";
@@ -14,7 +14,7 @@ export class TeamCowboy {
   private readonly client: Client;
   public Test: TestMethods;
   public Auth: AuthMethods;
-  public User: UserMethods;
+  public User: ReturnType<typeof userMethods>;
   public Event: EventMethods;
 
   constructor(options: TeamcowboyOptions) {

@@ -1,2 +1,2 @@
 export { TeamCowboy } from "./core";
-export type { Event } from "./types";
+export type { TCEvent, User } from "./types";

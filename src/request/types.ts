@@ -32,21 +32,7 @@ export type ParamsWithoutSig<T extends ApiParams> = Omit<
 > &
   T;
 
-export type TCResponse<T> = TCSuccessResponse<T>;
-
-export type TCErrorResponse = {
-  readonly success: false;
-  readonly requestSecs: number;
-  readonly body: {
-    readonly error: {
-      readonly errorCode: string;
-      readonly httpResponse: number;
-      readonly message: string;
-    };
-  };
-};
-
-export type TCSuccessResponse<T> = {
+export type TCResponse<T> = {
   readonly success: true;
   readonly requestSecs: number;
   readonly body: T;

@@ -1,8 +1,8 @@
 import { create } from "../request/params";
 import { TCResponse } from "../request/types";
-import { Client, Event } from "../types";
+import { Client, TCEvent } from "../types";
 
-type GetResponse = TCResponse<Event>;
+type GetResponse = TCResponse<TCEvent>;
 
 type GetOptions = {
   readonly teamId: number;
