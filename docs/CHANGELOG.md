@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/smoak/teamcowboy.js/compare/v1.0.2...v1.0.3) (2023-10-05)
+
+
+### Bug Fixes
+
+* ensure axios-curlirize is a regular dependency ([f3486cc](https://github.com/smoak/teamcowboy.js/commit/f3486cc1d2602e4eb86aa95e3772c31570238dab))
+
 ## [1.0.2](https://github.com/smoak/teamcowboy.js/compare/v1.0.1...v1.0.2) (2023-10-05)
 
 
