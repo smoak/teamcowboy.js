@@ -42,6 +42,7 @@ jobs:
           node-version: 18.x
           cache: "npm"
       - run: npm ci
+      - run: npm run build
       - name: Semantic Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
