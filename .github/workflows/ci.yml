@@ -42,4 +42,4 @@ jobs:
         run: |
           echo "$GH_TOKEN"
           echo "$NPM_TOKEN"
-          npm run release
+          npx semantic-release --debug
