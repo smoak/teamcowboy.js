@@ -17,7 +17,7 @@
     "test": "jest",
     "semantic-release": "semantic-release"
   },
-  "repository": "github:smoak/teamcowboy.js",
+  "repository": "https://github.com/smoak/teamcowboy.js.git",
   "keywords": [
     "teamcowboy",
     "api",
