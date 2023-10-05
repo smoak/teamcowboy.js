@@ -5,6 +5,9 @@
   "module": "dist/esm/index.js",
   "main": "dist/cjs/index.js",
   "types": "dist/esm/index.d.ts",
+  "files": [
+    "dist/**"
+  ],
   "scripts": {
     "build": "run-p 'build:*'",
     "build:cjs": "tsc -p ./tsconfig.cjs.json",
@@ -34,6 +37,8 @@
     "@babel/core": "^7.22.11",
     "@babel/preset-env": "^7.22.10",
     "@babel/preset-typescript": "^7.22.11",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/exec": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/github": "^9.2.1",
     "@semantic-release/npm": "^11.0.0",
