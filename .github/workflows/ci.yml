@@ -38,8 +38,9 @@ jobs:
           cache: "npm"
       - name: Semantic Release
         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
-          echo "$GH_TOKEN"
+          echo "$GITHUB_TOKEN"
           echo "$NPM_TOKEN"
           npx semantic-release --debug
