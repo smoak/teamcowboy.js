@@ -1,1 +1,0 @@
-export { TeamCowboy } from "./core";
