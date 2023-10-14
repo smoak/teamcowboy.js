@@ -3,7 +3,7 @@ import type { Client, TeamcowboyOptions } from "./types";
 import { VERSION } from "./version";
 import type { AxiosRequestConfig } from "axios";
 import axios from "axios";
-import { testMethods, type TestMethods } from "./methods/test";
+import { testMethods } from "./methods/test";
 import { AuthMethods, authMethods } from "./methods/auth";
 import { userMethods } from "./methods/user";
 import AxiosCurlirize from "axios-curlirize";
@@ -12,7 +12,7 @@ import { EventMethods, eventMethods } from "./methods/event";
 
 export class TeamCowboy {
   private readonly client: Client;
-  public Test: TestMethods;
+  public Test: ReturnType<typeof testMethods>;
   public Auth: AuthMethods;
   public User: ReturnType<typeof userMethods>;
   public Event: EventMethods;
