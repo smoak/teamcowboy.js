@@ -7,7 +7,7 @@ type GetRequestParams = {
   readonly testParam: string | null;
 };
 
-type GetResponse = TCResponse<{ readonly helloWorld: string }>;
+export type GetResponse = TCResponse<{ readonly helloWorld: string }>;
 export type Get = (testParam?: string) => Promise<GetResponse>;
 export const getRequest = async (
   client: Client,

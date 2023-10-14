@@ -3,3 +3,4 @@ test.js
 jest.config.js
 .eslintrc.cjs
 babel.config.js
+jest.setup.ts
