@@ -2,6 +2,14 @@
 
 A TypeScript first TeamCowboy API client
 
+## Installation
+
+```bash
+$ npm i --save teamcowboy.js
+$ # or with yarn:
+$ yarn add teamcowboy.js
+```
+
 ## Usage
 
 In order to access and make calls against the Team Cowboy API, you must have a valid API Account for your application.
