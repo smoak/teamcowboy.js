@@ -1,18 +1,7 @@
-import {
-  rest,
-  PathParams,
-  ResponseResolver,
-  RestContext,
-  RestRequest,
-} from "msw";
+import { http, HttpResponse, HttpResponseResolver } from "msw";
 
-type RestResponseResolver = ResponseResolver<
-  RestRequest<never, PathParams<string>>,
-  RestContext
->;
-
-const testGetRequestResolver: RestResponseResolver = (req, res, ctx) => {
-  const testParam = req.url.searchParams.get("testParam");
+const testGetRequestResolver: HttpResponseResolver = ({ request }) => {
+  const testParam = new URL(request.url).searchParams.get("testParam");
   const jsonResponse = {
     success: true,
     requestSecs: 0.0025179386138916,
@@ -23,30 +12,30 @@ const testGetRequestResolver: RestResponseResolver = (req, res, ctx) => {
   };
 
   if (testParam) {
-    jsonResponse["body"][
-      "helloWorld"
-    ] = `You successfully called the test method! The value you passed in for 'testParam' was: ${testParam}`;
+    jsonResponse["body"]["helloWorld"] =
+      `You successfully called the test method! The value you passed in for 'testParam' was: ${testParam}`;
   }
 
-  return res(ctx.json(jsonResponse));
+  return HttpResponse.json(jsonResponse);
 };
 
 type ApiMethod = "Test_GetRequest";
 
-const ApiMethodsToResolver: Record<ApiMethod, RestResponseResolver> = {
+const ApiMethodsToResolver: Record<ApiMethod, HttpResponseResolver> = {
   Test_GetRequest: testGetRequestResolver,
 };
 
-const getResponseResolver: RestResponseResolver = (req, res, ctx) => {
-  const apiMethod = req.url.searchParams.get("method");
+const getResponseResolver: HttpResponseResolver = (info) => {
+  const { request } = info;
+  const apiMethod = new URL(request.url).searchParams.get("method");
 
   if (!apiMethod) {
-    return res(ctx.status(400));
+    return HttpResponse.json({}, { status: 404 });
   }
 
   const resolver = ApiMethodsToResolver[apiMethod as ApiMethod];
 
-  return resolver(req, res, ctx);
+  return resolver(info);
 };
 
-export const handlers = [rest.get("*", getResponseResolver)];
+export const handlers = [http.get("*", getResponseResolver)];

@@ -17,9 +17,12 @@
     "lint": "run-s 'lint:*'",
     "lint:es": "eslint src --max-warnings=0",
     "lint:style": "prettier 'src/**/*.(ts|js)' --check",
+    "prepack": "run-s -n build",
     "test": "jest"
   },
-  "repository": "https://github.com/smoak/teamcowboy.js.git",
+  "repository": {
+    "url": "https://github.com/smoak/teamcowboy.js.git"
+  },
   "keywords": [
     "teamcowboy",
     "api",
@@ -29,40 +32,37 @@
   "license": "MIT",
   "dependencies": {
     "axios": "^1.7.7",
-    "axios-curlirize": "^1.3.7",
+    "axios-curlirize": "^2.0.0",
     "crypto-js": "^4.2.0",
-    "qs": "^6.13.0",
-    "universal-user-agent": "^6.0.0"
+    "universal-user-agent": "^6.0.0",
+    "qs": "^6.13.0"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
     "@babel/preset-env": "^7.25.4",
     "@babel/preset-typescript": "^7.24.7",
     "@semantic-release/exec": "^6.0.3",
-    "@semantic-release/git": "^10.0.1",
-    "@semantic-release/github": "^9.2.1",
-    "@semantic-release/npm": "^11.0.0",
-    "@types/axios-curlirize": "^1.3.2",
+    "@semantic-release/github": "^10.3.3",
+    "@semantic-release/npm": "^12.0.1",
+    "@types/axios-curlirize": "^1.3.5",
     "@types/crypto-js": "^4.2.2",
-    "@types/fetch-mock": "^7.3.8",
     "@types/jest": "^29.5.13",
-    "@types/node": "^18.17.1",
-    "@types/qs": "^6.9.8",
-    "@typescript-eslint/eslint-plugin": "^6.6.0",
-    "@typescript-eslint/parser": "^6.6.0",
+    "@types/node": "^20.14.8",
+    "@types/qs": "^6.9.16",
+    "@typescript-eslint/eslint-plugin": "^8.5.0",
+    "@typescript-eslint/parser": "^8.5.0",
     "babel-jest": "^29.7.0",
-    "eslint": "^8.48.0",
-    "fetch-mock": "^9.3.1",
+    "eslint": "^8.5.0",
     "jest": "^29.7.0",
-    "msw": "^1.3.2",
+    "msw": "^2.4.6",
     "npm-run-all": "^4.1.5",
     "prettier": "^3.3.3",
-    "rimraf": "^5.0.1",
-    "semantic-release": "^22.0.5",
+    "rimraf": "^6.0.1",
+    "semantic-release": "^24.1.1",
     "typescript": "^5.2.2"
   },
   "engines": {
-    "node": ">= 18"
+    "node": "^18.19.0 || >= 20.5.0"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
@@ -70,6 +70,6 @@
     "provenance": true
   },
   "volta": {
-    "node": "18.17.1"
+    "node": "20.17.0"
   }
 }

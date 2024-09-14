@@ -5,13 +5,13 @@
   "plugins": [
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
-    "@semantic-release/npm",
     [
       "@semantic-release/exec",
       {
         "prepareCmd": "echo 'export const VERSION = \"${nextRelease.version}\";' > src/version.ts"
       }
     ],
+    "@semantic-release/npm",
     [
       "@semantic-release/github",
       {
