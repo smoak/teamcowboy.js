@@ -26,7 +26,7 @@ Provide the private and public api keys to make requests.
 * `Test.postRequest`
 
 ```ts
-const { TeamCowboy } = require("teamcowboy.js");
+import { TeamCowboy } from "teamcowboy.js";
 
 const tc = new TeamCowboy({
   privateApiKey: process.env.TC_PRIV_KEY,
@@ -40,7 +40,7 @@ Once authenticated, you can provide the user's auth token:
 
 
 ```ts
-const { TeamCowboy } = require("teamcowboy.js");
+import { TeamCowboy } from "teamcowboy.js";
 
 const tc = new TeamCowboy({
   privateApiKey: process.env.TC_PRIV_KEY,
@@ -52,7 +52,7 @@ const tc = new TeamCowboy({
 Then you can start calling various methods:
 
 ```ts
-const { TeamCowboy } = require("teamcowboy.js");
+import { TeamCowboy } from "teamcowboy.js";
 
 const tc = new TeamCowboy({
   privateApiKey: process.env.TC_PRIV_KEY,

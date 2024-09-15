@@ -1,4 +1,4 @@
-import { http, HttpResponse, HttpResponseResolver } from "msw";
+import { http, HttpHandler, HttpResponse, HttpResponseResolver } from "msw";
 
 const testGetRequestResolver: HttpResponseResolver = ({ request }) => {
   const testParam = new URL(request.url).searchParams.get("testParam");
@@ -38,4 +38,4 @@ const getResponseResolver: HttpResponseResolver = (info) => {
   return resolver(info);
 };
 
-export const handlers = [http.get("*", getResponseResolver)];
+export const handlers: HttpHandler[] = [http.get("*", getResponseResolver)];
