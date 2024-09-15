@@ -1,6 +1,6 @@
-import { create } from "../../request/params";
-import { TCResponse } from "../../request/types";
-import { Client, User } from "../../types";
+import { create } from "../../request/params.js";
+import { TCResponse } from "../../request/types.js";
+import { Client, User } from "../../types.js";
 
 type GetUserRequestParams = {
   readonly method: "User_Get";

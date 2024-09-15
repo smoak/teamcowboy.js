@@ -1,6 +1,6 @@
-import { create } from "../../request/params";
-import { TCResponse } from "../../request/types";
-import { Client, Message } from "../../types";
+import { create } from "../../request/params.js";
+import { TCResponse } from "../../request/types.js";
+import { Client, Message } from "../../types.js";
 
 export type GetTeamMessagesResponse = TCResponse<Message[]>;
 

@@ -1,4 +1,4 @@
-import { ApiParams, ParamsWithoutSig } from "./types";
+import { ApiParams, ParamsWithoutSig } from "./types.js";
 
 const sortedURLSearchParams = (params: URLSearchParams): URLSearchParams => {
   const sorted = new URLSearchParams(params);

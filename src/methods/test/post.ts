@@ -1,6 +1,6 @@
-import { create } from "../../request/params";
-import { TCResponse } from "../../request/types";
-import { Client } from "../../types";
+import { create } from "../../request/params.js";
+import { TCResponse } from "../../request/types.js";
+import { Client } from "../../types.js";
 
 type PostRequestParams = {
   readonly method: "Test_PostRequest";

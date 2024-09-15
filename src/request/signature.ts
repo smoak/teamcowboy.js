@@ -1,6 +1,6 @@
-import sha1 from "crypto-js/sha1";
-import { ApiParams, ParamsWithoutSig, RequestOptions } from "./types";
-import { create as createRequestBody } from "./body";
+import sha1 from "crypto-js/sha1.js";
+import { ApiParams, ParamsWithoutSig, RequestOptions } from "./types.js";
+import { create as createRequestBody } from "./body.js";
 
 const sha1hash = (input: string): string => {
   return sha1(input).toString();

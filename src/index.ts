@@ -1,2 +1,2 @@
-export { TeamCowboy } from "./core";
-export type { TCEvent, User } from "./types";
+export { TeamCowboy } from "./core.js";
+export type { TCEvent, User } from "./types.js";

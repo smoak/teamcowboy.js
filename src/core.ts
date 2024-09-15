@@ -1,14 +1,14 @@
 import { getUserAgent } from "universal-user-agent";
-import type { Client, TeamcowboyOptions } from "./types";
-import { VERSION } from "./version";
+import type { Client, TeamcowboyOptions } from "./types.js";
+import { VERSION } from "./version.js";
 import type { AxiosRequestConfig } from "axios";
 import axios from "axios";
-import { testMethods } from "./methods/test";
-import { AuthMethods, authMethods } from "./methods/auth";
-import { userMethods } from "./methods/user";
-import AxiosCurlirize from "axios-curlirize";
+import { requestLogger, responseLogger } from "axios-logger";
+import { testMethods } from "./methods/test.js";
+import { AuthMethods, authMethods } from "./methods/auth.js";
+import { userMethods } from "./methods/user.js";
 import Qs from "qs";
-import { EventMethods, eventMethods } from "./methods/event";
+import { EventMethods, eventMethods } from "./methods/event.js";
 
 export class TeamCowboy {
   private readonly client: Client;
@@ -38,7 +38,8 @@ export class TeamCowboy {
     };
 
     if (options.verbose) {
-      AxiosCurlirize(this.client.axiosInstance);
+      this.client.axiosInstance.interceptors.request.use(requestLogger);
+      this.client.axiosInstance.interceptors.response.use(responseLogger);
     }
 
     this.Test = { ...testMethods(this.client) };

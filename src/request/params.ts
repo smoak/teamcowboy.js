@@ -1,5 +1,5 @@
-import type { Client } from "../types";
-import { create as createSignature } from "./signature";
+import type { Client } from "../types.js";
+import { create as createSignature } from "./signature.js";
 import {
   ApiParams,
   AuthenticatedRequestParams,
@@ -7,7 +7,7 @@ import {
   RequestOptions,
   RequestParams,
   RequiredParams,
-} from "./types";
+} from "./types.js";
 
 type CreateOptions<T extends ApiParams> = RequestOptions & {
   readonly client: Client;

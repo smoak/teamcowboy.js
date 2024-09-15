@@ -1,6 +1,6 @@
-import { Client } from "../../types";
-import { Get, getRequest } from "./get";
-import { Post, postRequest } from "./post";
+import { Client } from "../../types.js";
+import { Get, getRequest } from "./get.js";
+import { Post, postRequest } from "./post.js";
 
 export type TestMethods = {
   readonly getRequest: Get;

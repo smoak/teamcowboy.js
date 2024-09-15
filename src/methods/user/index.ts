@@ -1,9 +1,9 @@
-import { Client } from "../../types";
-import { Get, getUser } from "./get";
-import { GetNextTeamEvent, getNextTeamEvent } from "./getNextTeamEvent";
-import { GetTeamEvents, getTeamEvents } from "./getTeamEvents";
-import { GetTeamMessages, getTeamMessages } from "./getTeamMessages";
-import { GetTeams, getTeams } from "./getTeams";
+import { Client } from "../../types.js";
+import { Get, getUser } from "./get.js";
+import { GetNextTeamEvent, getNextTeamEvent } from "./getNextTeamEvent.js";
+import { GetTeamEvents, getTeamEvents } from "./getTeamEvents.js";
+import { GetTeamMessages, getTeamMessages } from "./getTeamMessages.js";
+import { GetTeams, getTeams } from "./getTeams.js";
 
 export type UserMethods = {
   readonly get: Get;

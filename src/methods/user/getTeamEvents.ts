@@ -1,6 +1,6 @@
-import { create } from "../../request/params";
-import { TCResponse } from "../../request/types";
-import { Client, TCEvent } from "../../types";
+import { create } from "../../request/params.js";
+import { TCResponse } from "../../request/types.js";
+import { Client, TCEvent } from "../../types.js";
 
 export type GetTeamEventsResponse = TCResponse<TCEvent[]>;
 
